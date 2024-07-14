@@ -274,7 +274,7 @@ const Contact = () => {
             <NavBar />
             <div id="contact" className="flex justify-center items-center mt-8 w-full bg-white py-12 lg:py-24 ">
                 <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
-                    <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+                    <form name="contact" method="POST" netlify onSubmit={handleSubmit}>
                         <input type="hidden" name="form-name" value="contact" />
                         <input type="hidden" name="subject" value="Sales inquiry from mysitename.netlify.app" />
 
