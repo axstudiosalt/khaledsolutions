@@ -44,72 +44,72 @@ const DemoProduct = (props) => {
         setMessage('')
     }
     
-    function sendEmail(e) {
-        e.preventDefault();
-        document.getElementById('submitBtn').disabled = true;
-        document.getElementById('submitBtn').innerHTML = 'Loading...';
-        let fData = new FormData();
-        fData.append('first_name', firstName)
-        fData.append('last_name', lastName)
-        fData.append('email', email)
-        fData.append('phone_number', phone)
-        fData.append('message', message)
-        fData.append('products', demoProducts)
+    // function sendEmail(e) {
+    //     e.preventDefault();
+    //     document.getElementById('submitBtn').disabled = true;
+    //     document.getElementById('submitBtn').innerHTML = 'Loading...';
+    //     let fData = new FormData();
+    //     fData.append('first_name', firstName)
+    //     fData.append('last_name', lastName)
+    //     fData.append('email', email)
+    //     fData.append('phone_number', phone)
+    //     fData.append('message', message)
+    //     fData.append('products', demoProducts)
 
-        // emailjs.sendForm('service_7uy4ojg', 'template_et9wvdg', e.target, 'user_uE0bSPGbhRTmAF3I2fd3s')
-        //   .then((result) => {
-        //       console.log(result.text);
-        //       Notiflix.Report.success(
-        //         'Success',
-        //         '"Thanks for sending a message, we\'ll be in touch soon."',
-        //         'Okay',
-        //         );
-        //   }, (error) => {
-        //       console.log(error.text);
-        //       Notiflix.Report.failure(
-        //         'An error occured',
-        //         'Please try sending the message again.',
-        //         'Okay',
-        //         );
-        //   });
+    //     // emailjs.sendForm('service_7uy4ojg', 'template_et9wvdg', e.target, 'user_uE0bSPGbhRTmAF3I2fd3s')
+    //     //   .then((result) => {
+    //     //       console.log(result.text);
+    //     //       Notiflix.Report.success(
+    //     //         'Success',
+    //     //         '"Thanks for sending a message, we\'ll be in touch soon."',
+    //     //         'Okay',
+    //     //         );
+    //     //   }, (error) => {
+    //     //       console.log(error.text);
+    //     //       Notiflix.Report.failure(
+    //     //         'An error occured',
+    //     //         'Please try sending the message again.',
+    //     //         'Okay',
+    //     //         );
+    //     //   });
 
-        axios({
-            method: "post",
-            url: process.env.REACT_APP_DEMO_REQUEST_API,
-            data: fData,
-            headers: {
-                'Content-Type':  'multipart/form-data'
-            }
-        })
-        .then(function (response) {
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerHTML = 'send message';
-            clearInput()
-            //handle success
-            Notiflix.Report.success(
-                'Success',
-                response.data.message,
-                'Okay',
-            );
-        })
-        .catch(function (error) {
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('submitBtn').innerHTML = 'send message';
-            //handle error
-            const { response } = error;
-            if(response.status === 500) {
-                Notiflix.Report.failure(
-                    'An error occurred',
-                    response.data.message,
-                    'Okay',
-                );
-            }
-            if(response.data.errors !== null) {
-                setErrors(response.data.errors)
-            }
+    //     axios({
+    //         method: "post",
+    //         url: process.env.REACT_APP_DEMO_REQUEST_API,
+    //         data: fData,
+    //         headers: {
+    //             'Content-Type':  'multipart/form-data'
+    //         }
+    //     })
+    //     .then(function (response) {
+    //         document.getElementById('submitBtn').disabled = false;
+    //         document.getElementById('submitBtn').innerHTML = 'send message';
+    //         clearInput()
+    //         //handle success
+    //         Notiflix.Report.success(
+    //             'Success',
+    //             response.data.message,
+    //             'Okay',
+    //         );
+    //     })
+    //     .catch(function (error) {
+    //         document.getElementById('submitBtn').disabled = false;
+    //         document.getElementById('submitBtn').innerHTML = 'send message';
+    //         //handle error
+    //         const { response } = error;
+    //         if(response.status === 500) {
+    //             Notiflix.Report.failure(
+    //                 'An error occurred',
+    //                 response.data.message,
+    //                 'Okay',
+    //             );
+    //         }
+    //         if(response.data.errors !== null) {
+    //             setErrors(response.data.errors)
+    //         }
             
-        });
-    }
+    //     });
+    // }
     return (
         <>
             <div>
