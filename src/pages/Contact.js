@@ -274,9 +274,9 @@ const Contact = () => {
             <NavBar />
             <div id="contact" className="flex justify-center items-center mt-8 w-full bg-white py-12 lg:py-24 ">
                 <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
-                    <form name="contact" method="POST" netlify onSubmit={handleSubmit}>
-                        <input type="hidden" name="form-name" value="contact" />
-                        <input type="hidden" name="subject" value="Sales inquiry from mysitename.netlify.app" />
+                    <form name="contact" data-netlify="true" onSubmit={handleSubmit} method="POST">
+                        <input id="test1" type="hidden" name="form-name" value="contact" />
+                        <input id="test2" type="hidden" name="subject" value="Sales inquiry from mysitename.netlify.app" />
 
                         <div className="w-full bg-white p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
                             <div className="flex">
@@ -292,6 +292,7 @@ const Contact = () => {
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
                                         onKeyUp={clearErrors}
+                                        id="firstName"
                                     />
                                     {errors.first_name && <p className="text-red-500 text-sm">{errors.first_name}</p>}
                                 </div>
@@ -304,6 +305,7 @@ const Contact = () => {
                                         value={lastName}
                                         onChange={(e) => setLastName(e.target.value)}
                                         onKeyUp={clearErrors}
+                                        id="lastName"
                                     />
                                     {errors.last_name && <p className="text-red-500 text-sm">{errors.last_name}</p>}
                                 </div>
@@ -316,6 +318,7 @@ const Contact = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         onKeyUp={clearErrors}
+                                        id="txtEmail"
                                     />
                                     {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                                 </div>
@@ -328,6 +331,7 @@ const Contact = () => {
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                         onKeyUp={clearErrors}
+                                        id="txtPhone"
                                     />
                                     {errors.phone_number && <p className="text-red-500 text-sm">{errors.phone_number}</p>}
                                 </div>
@@ -340,6 +344,7 @@ const Contact = () => {
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     onKeyUp={clearErrors}
+                                    id="txtMsg"
                                 ></textarea>
                                 {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
                             </div>

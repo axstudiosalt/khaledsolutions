@@ -117,7 +117,7 @@ const DemoProduct = (props) => {
             </div>
             <div id='demo' className="flex justify-center items-center mt-8 w-full bg-white py-12 lg:py-24">
                 <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
-                <form name="contact" method="POST" data-netlify="true">
+                <form name="demoContact" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="contact" />
 
     <div className="w-full bg-white p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
