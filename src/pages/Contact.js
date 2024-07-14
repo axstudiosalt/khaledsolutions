@@ -274,7 +274,7 @@ const Contact = () => {
             <NavBar />
             <div id="contact" className="flex justify-center items-center mt-8 w-full bg-white py-12 lg:py-24 ">
                 <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
-                    {/* <form name="contact" data-netlify="true" onSubmit={handleSubmit} method="POST">
+                    <form name="contact" data-netlify="true" onSubmit={handleSubmit} method="POST">
                         <input id="test1" type="hidden" name="form-name" value="contact" />
                         <input id="test2" type="hidden" name="subject" value="Sales inquiry from mysitename.netlify.app" />
 
@@ -358,28 +358,7 @@ const Contact = () => {
                                 </button>
                             </div>
                         </div>
-                    </form> */}
-                    <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
-
+                    </form>
                     <div className="w-full lg:-mt-96 lg:w-2/6 px-8 py-6 ml-auto bg-blue-900 rounded-2xl">
                         <div className="flex flex-col text-white">
                             <div className="flex my-4 w-2/3 lg:w-3/4">
