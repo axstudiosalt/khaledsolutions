@@ -350,13 +350,14 @@ const Contact = () => {
             {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
         </div>
         <div className="my-2 w-1/2 lg:w-2/4">
-            <button
+            {/* <button
                 type="submit"
                 id="submitBtn"
                 className="uppercase text-sm font-bold tracking-wide bg-gray-500 hover:bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
             >
                 Send Message
-            </button>
+            </button> */}
+            <input type='submit'/>
         </div>
     </div>
 </form>
