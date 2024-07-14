@@ -210,7 +210,6 @@
 
 // export default Contact;
 
-
 import React, { useState } from 'react';
 import NavBar from '../components/Navbar/NavBar';
 import Footer from '../components/Footer';
@@ -225,6 +224,7 @@ const Contact = () => {
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
     const [errors, setErrors] = useState({});
+    const [statusMessage, setStatusMessage] = useState('');
 
     const clearErrors = () => {
         setErrors({});
@@ -254,7 +254,7 @@ const Contact = () => {
             body: new URLSearchParams(new FormData(form)).toString(),
         })
         .then(() => {
-            alert('Message sent successfully!');
+            setStatusMessage('Message sent successfully!');
             form.reset(); // Optionally reset the form after successful submission
             setFirstName('');
             setLastName('');
@@ -265,7 +265,7 @@ const Contact = () => {
         })
         .catch((error) => {
             console.error('Error submitting form:', error);
-            alert('An error occurred while submitting the form. Please try again later.');
+            setStatusMessage('An error occurred while submitting the form. Please try again later.');
         });
     };
 
@@ -415,6 +415,7 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
+                    {statusMessage && <div className="mt-4 text-green-500">{statusMessage}</div>}
                 </div>
             </div>
             <Footer />
